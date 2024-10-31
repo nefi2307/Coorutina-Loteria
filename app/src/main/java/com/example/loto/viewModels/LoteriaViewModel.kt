@@ -20,7 +20,7 @@ class LoteriaViewModel: ViewModel() {
         var num =6 // para repetir el ciclo y mostrar los numeros
         while (num!=0)
         {
-            delay(500) // para simular la carga
+            delay(2000) // para simular la carga
             val numRand = Random.nextInt(100+1) // genera el numero random
             _lotoNumbers.value += listOf(numRand)
 
@@ -39,5 +39,10 @@ class LoteriaViewModel: ViewModel() {
                 isLoading = false
             }
         }
+    }
+
+    fun LimpiarLista()
+    {
+        _lotoNumbers.value = emptyList()
     }
 }
